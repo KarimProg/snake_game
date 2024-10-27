@@ -1,0 +1,40 @@
+.circle {
+    height: 50px;
+    width: 50px;
+    background-color: blue;
+    border-radius: 50%;
+    border: 10px dashed green;
+}
+
+#fruit {
+    height: 50px;
+    width: 50px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+body {
+    background-color: yellowgreen;
+    padding-bottom: 850px;
+    width: 1665px;
+    border: 10px solid black;
+}
+
+#head {
+    background-color: green;
+}
+
+#score{
+    background-color: goldenrod;
+    border-radius: 5px;
+    border: 2px solid gold;
+    padding: 10px;
+    margin-left: -5px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    display: inline;
+    float: right;
+    font: bold;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
