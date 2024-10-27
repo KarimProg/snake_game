@@ -21,9 +21,6 @@ function lostScreen()
     state = 0;
 
     clearInterval(mainGame);
-    // while(true){
-    //     Tim
-    // }
 }
 
 document.addEventListener('keydown', (event) => {
@@ -44,11 +41,6 @@ document.addEventListener('keydown', (event) => {
     }
 });
 
-// document.addEventListener('keyup', (event) => {
-//     if (event.key.toLowerCase() === 'w' || event.key.toLowerCase() === 'a' || event.key.toLowerCase() === 's' || event.key.toLowerCase() === 'd')
-//         state=0;
-// });
-
 setInterval(()=>{
     if (state != prevState)
     {
@@ -59,6 +51,7 @@ setInterval(()=>{
 
 // Select the element
 let element = document.getElementById('head');
+
 // Initialize position variables
 let topPositionMainHead = 20;
 let leftPositionMainHead = 20;
@@ -88,7 +81,6 @@ const mainGame = setInterval(()=>{
     switch(state)
     {
         case 1:
-            // topPositionMainHead -= 2*scale;
             if(topPositionMainHead>45)
             {
                 body[0].remove();
@@ -97,9 +89,6 @@ const mainGame = setInterval(()=>{
                 body[0].style.top=`${parseInt(body[body.length-1].style.top)-15*scale}px`;
                 let temp=body.shift();
                 body.push(temp);
-                // if(body.length==1)
-                // else
-                //     body[body.length-1].style.top=`${parseInt(body[body.length-2].style.top)-50}px`;
 
                 document.body.appendChild(body[body.length-1]);
             }
@@ -140,11 +129,7 @@ const mainGame = setInterval(()=>{
                     body[0].style.top=`${parseInt(body[body.length-1].style.top)}px`;
                     let temp=body.shift();
                     body.push(temp);
-                    // if(body.length==1)
-                    //     body[body.length-1].style.left=`${parseInt(body[body.length-1].style.left)+50}px`;
-                    // else
-                    //     body[body.length-1].style.left=`${parseInt(body[body.length-2].style.left)+50}px`;
-                    
+
                     document.body.appendChild(body[body.length-1]);
 				}
             else
@@ -242,9 +227,6 @@ function distanceFruitOk(xFruitArg, yFruitArg)
     return true;
 }
 generateFruit();
-
-/////////////////////////////////////////////////////////////////////////////////////////
-// TODO implement snake body logic
 
 function checkForIntersection()
 {
