@@ -11,6 +11,8 @@ function lostScreen()
     document.body.style.alignItems = "center";
     document.body.style.height = "100vh";
     document.body.style.margin = "0";
+    document.body.style.color = "white";
+    document.body.style.fontFamily = "arial";
 
     const h1 = document.createElement('h1');
     h1.textContent=`You Have Lost! Score: ${score}`;
@@ -146,7 +148,7 @@ const mainGame = setInterval(()=>{
 
      // show position of head
     console.log(`${topPositionMainHead}, ${leftPositionMainHead}`);
-    if (scale<2)
+    // if (scale<2)
         scale*=1.001;
     
     checkForIntersection();
@@ -199,15 +201,11 @@ function generateFruit()
             body.unshift(createNewHead(pos.x, pos.y));
         }
     }
-    
-    xFruit = getRandomInt(35, 1620);
-    yFruit = getRandomInt(35, 780);
-    
-    if(!distanceFruitOk(xFruit, yFruit)){
-        xFruit+=100;
-        yFruit+=100;
 
-    }
+    do{
+        xFruit = getRandomInt(35, 1620);
+        yFruit = getRandomInt(35, 780);
+    } while(!distanceFruitOk(xFruit+25, yFruit+25));
 
     document.getElementById('scoreNum').innerHTML=++score;
     fruit.style.top=`${yFruit}px`;
@@ -221,7 +219,7 @@ function distanceFruitOk(xFruitArg, yFruitArg)
     {   
         let bodyNodeYPosition = parseInt(body[i].style.top)+35;
         let bodyNodeXPosition = parseInt(body[i].style.left)+35;
-        if(Math.sqrt((xFruitArg-bodyNodeXPosition)**2 + (yFruitArg-bodyNodeYPosition)**2)<5)
+        if(Math.sqrt((xFruitArg-bodyNodeXPosition)**2 + (yFruitArg-bodyNodeYPosition)**2)<40)
             return false;
     }
     return true;
